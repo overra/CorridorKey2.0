@@ -622,6 +622,14 @@ python infer.py \
   --hann_stride 4
 ```
 
+## Browser (Experimental)
+
+CorridorKey 2.0 can also run entirely in a web browser on WebGPU, through
+ONNX Runtime Web and transformers.js, at a fixed model resolution (896×512 for
+16:9 footage by default) and a few frames per second on a desktop GPU. See
+[web/README.md](web/README.md) for exporting the models, running the demo
+page, and measured speed and accuracy.
+
 ## Licensing and Permissions
 
 Use CorridorKey for whatever you'd like, including processing footage for

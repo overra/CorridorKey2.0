@@ -1,0 +1,112 @@
+{
+ "preset": "896x512",
+ "dtype": "q8_fused",
+ "dtypes": {},
+ "epOptions": {},
+ "golden": "golden",
+ "stride": null,
+ "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+ "adapter": {
+  "vendor": "nvidia",
+  "architecture": "ampere",
+  "description": "",
+  "f16": true,
+  "maxBufferSize": 4294967296,
+  "maxStorageBufferBindingSize": 4294967292
+ },
+ "load_ms": 2942,
+ "load_ms_by_component": {
+  "cradio": 1112,
+  "moge": 362,
+  "rvm": 120,
+  "stage1": 954,
+  "stage2": 378,
+  "blend": 14
+ },
+ "sequence": [
+  {
+   "t": 0,
+   "max_abs": 0.0148,
+   "mean_abs": 0.000179,
+   "over4": 0
+  },
+  {
+   "t": 1,
+   "max_abs": 0.0188,
+   "mean_abs": 0.00018,
+   "over4": 0.00000436
+  },
+  {
+   "t": 2,
+   "max_abs": 0.0161,
+   "mean_abs": 0.000187,
+   "over4": 0.00000436
+  },
+  {
+   "t": 3,
+   "max_abs": 0.0162,
+   "mean_abs": 0.000179,
+   "over4": 0.00000436
+  },
+  {
+   "t": 4,
+   "max_abs": 0.0162,
+   "mean_abs": 0.000183,
+   "over4": 0.00000436
+  },
+  {
+   "t": 5,
+   "max_abs": 0.0161,
+   "mean_abs": 0.000183,
+   "over4": 0.00000436
+  },
+  {
+   "t": 6,
+   "max_abs": 0.016,
+   "mean_abs": 0.000186,
+   "over4": 0.00000436
+  },
+  {
+   "t": 7,
+   "max_abs": 0.0214,
+   "mean_abs": 0.000183,
+   "over4": 0.00000654
+  },
+  {
+   "t": 8,
+   "max_abs": 0.0197,
+   "mean_abs": 0.000187,
+   "over4": 0.0000262
+  },
+  {
+   "t": 9,
+   "max_abs": 0.0214,
+   "mean_abs": 0.000183,
+   "over4": 0.0000262
+  },
+  {
+   "t": 10,
+   "max_abs": 0.0219,
+   "mean_abs": 0.000188,
+   "over4": 0.0000349
+  },
+  {
+   "t": 11,
+   "max_abs": 0.0267,
+   "mean_abs": 0.000183,
+   "over4": 0.000024
+  },
+  {
+   "t": 12,
+   "max_abs": 0.0178,
+   "mean_abs": 0.000184,
+   "over4": 0.0000131
+  },
+  {
+   "t": 13,
+   "max_abs": 0.0173,
+   "mean_abs": 0.000183,
+   "over4": 0.00000654
+  }
+ ]
+}

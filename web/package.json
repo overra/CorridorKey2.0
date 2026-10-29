@@ -1,0 +1,16 @@
+{
+  "name": "corridorkey-web",
+  "private": true,
+  "type": "module",
+  "description": "CorridorKey 2.0 in the browser: ONNX Runtime Web (WebGPU) + transformers.js",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "bench": "node bench.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

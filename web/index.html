@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CorridorKey Web</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">
+    {
+      "imports": {
+        "onnxruntime-web/webgpu": "./node_modules/onnxruntime-web/dist/ort.webgpu.min.mjs",
+        "onnxruntime-common": "./node_modules/onnxruntime-common/dist/esm/index.js",
+        "@huggingface/transformers": "./node_modules/@huggingface/transformers/dist/transformers.web.js"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #f6f6f4; --panel: #ffffff; --text: #1b1c1e; --muted: #6a6d73; --line: #dedfe2;
+      --accent: #1f8f5f; --accent-text: #ffffff; --drop: #eef6f1;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111214; --panel: #1a1c1f; --text: #e8e9eb; --muted: #9a9ea6; --line: #2c2f34;
+              --accent: #3fbf83; --accent-text: #08130d; --drop: #16241d; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, sans-serif; }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    .sub { color: var(--muted); margin: 0 0 20px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: 320px 1fr; }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 12px; }
+    label { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 8px 0; }
+    select, input[type=number] { width: 170px; padding: 5px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); }
+    button { padding: 7px 14px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--text); cursor: pointer; }
+    button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+    button:disabled { opacity: .45; cursor: default; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .status { color: var(--muted); margin-top: 8px; min-height: 1.4em; word-break: break-word; }
+    #drop { border: 1.5px dashed var(--line); border-radius: 8px; padding: 18px; text-align: center; color: var(--muted); margin-bottom: 8px; }
+    #drop.over, #drop.has-file { background: var(--drop); border-color: var(--accent); }
+    #drop.locked { opacity: .5; pointer-events: none; }
+    .viewer canvas { width: 100%; height: auto; background: #000; border-radius: 6px; display: block; }
+    .viewer .controls { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+    .viewer input[type=range] { flex: 1; min-width: 160px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>CorridorKey 2.0 in the browser</h1>
+  <p class="sub">Green-screen keying on WebGPU with ONNX Runtime Web and transformers.js. Everything runs locally on your GPU.</p>
+  <div class="grid">
+    <div>
+      <section>
+        <h2>Model</h2>
+        <label>Resolution <select id="preset"></select></label>
+        <label>Precision <select id="variant"></select></label>
+        <div class="row"><button id="load" class="primary">Load model</button></div>
+        <div class="status" id="load-status">Weights are 1.5–2.4 GB depending on precision.</div>
+      </section>
+      <section style="margin-top:16px">
+        <h2>Clip</h2>
+        <div id="drop">Drop a video here, or <label style="display:inline;margin:0"><input type="file" id="file" accept="video/*"></label></div>
+        <label>Frame rate <input type="number" id="fps" value="24" min="1" max="120" step="1"></label>
+        <label>Max frames <input type="number" id="max-frames" value="96" min="1" step="1"></label>
+        <label>Overlapping windows <input type="checkbox" id="overlap" checked></label>
+        <label>First-frame matte <input type="file" id="hint" accept="image/*" style="width:170px"></label>
+        <div class="row">
+          <button id="run" class="primary" disabled>Key clip</button>
+          <button id="stop" disabled>Stop</button>
+        </div>
+        <div class="status" id="run-status"></div>
+      </section>
+    </div>
+    <section class="viewer">
+      <h2>Result</h2>
+      <canvas id="out" width="896" height="504"></canvas>
+      <div class="controls">
+        <select id="view">
+          <option value="composite">Composite</option>
+          <option value="alpha">Alpha</option>
+          <option value="fg">Foreground</option>
+        </select>
+        <label style="margin:0">Despill <input type="range" id="despill" min="0" max="1" step="0.05" value="0.5" style="width:100px"></label>
+        <input type="range" id="scrub" min="0" max="0" value="0">
+        <span id="frame-label"></span>
+        <button id="save" disabled>Save PNG</button>
+      </div>
+    </section>
+  </div>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

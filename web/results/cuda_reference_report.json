@@ -1,0 +1,165 @@
+{
+ "shape": [
+  8,
+  512,
+  896
+ ],
+ "time_fp32_s": {
+  "cradio+moge": 0.09781091699551325,
+  "rvm": 0.021409239998320118,
+  "stage1": 0.26680989599844906,
+  "stage2": 0.6040530129976105
+ },
+ "time_bf16_s": {
+  "cradio+moge": 0.030740465997951105,
+  "rvm": 0.030384919002244715,
+  "stage1": 0.1303824650021852,
+  "stage2": 0.31186327100294875
+ },
+ "peak_gib_fp32": 5.353461742401123,
+ "peak_gib_bf16": 6.009573936462402,
+ "bf16_vs_fp32": {
+  "cradio": {
+   "max_abs": 2.589647054672241,
+   "mean_abs": 0.013272160664200783,
+   "ref_absmax": 17.462352752685547
+  },
+  "moge": {
+   "max_abs": 3.7014505863189697,
+   "mean_abs": 0.023956459015607834,
+   "ref_absmax": 5.482102870941162
+  },
+  "rvm": {
+   "max_abs": 3.5942723751068115,
+   "mean_abs": 0.03989289700984955,
+   "ref_absmax": 5.919790267944336
+  },
+  "rvm_state": {
+   "max_abs": 0.3652747869491577,
+   "mean_abs": 0.042447421699762344,
+   "ref_absmax": 9.959099769592285
+  },
+  "baton": {
+   "max_abs": 0.05451449751853943,
+   "mean_abs": 0.002248312346637249,
+   "ref_absmax": 3.897242546081543
+  },
+  "aux": {
+   "max_abs": 0.018319427967071533,
+   "mean_abs": 0.00048435007920488715,
+   "ref_absmax": 1.0155736207962036
+  },
+  "logits": {
+   "max_abs": 0.04301469027996063,
+   "mean_abs": 0.0003350169281475246,
+   "ref_absmax": 1.0668394565582275
+  }
+ },
+ "alpha_bf16_vs_fp32": {
+  "max_abs": 0.024576127529144287,
+  "mean_abs": 0.0002145804901374504
+ },
+ "activation_absmax_top25": [
+  [
+   "foundations.cradio.radio_model.model.norm",
+   925.0171508789062
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.26.mlp.fc2",
+   623.8015747070312
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.26.mlp.drop2",
+   623.8015747070312
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.26.ls2",
+   623.8015747070312
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.26.drop_path2",
+   623.8015747070312
+  ],
+  [
+   "foundations.cradio.radio_model.feature_normalizer",
+   616.0750122070312
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.17.mlp.fc2",
+   425.4123840332031
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.17.mlp.drop2",
+   425.4123840332031
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.17.ls2",
+   425.4123840332031
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.17.drop_path2",
+   425.4123840332031
+  ],
+  [
+   "foundations.moge.encoder.backbone.blocks.8.ls2",
+   350.0354919433594
+  ],
+  [
+   "foundations.moge.encoder.backbone.blocks.11.ls2",
+   259.7132263183594
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.23.mlp.fc2",
+   173.4980926513672
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.23.mlp.drop2",
+   173.4980926513672
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.23.ls2",
+   173.4980926513672
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.23.drop_path2",
+   173.4980926513672
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.18.mlp.fc2",
+   134.94142150878906
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.18.mlp.drop2",
+   134.94142150878906
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.18.ls2",
+   134.94142150878906
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.18.drop_path2",
+   134.94142150878906
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.21.mlp.fc2",
+   94.61518859863281
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.21.mlp.drop2",
+   94.61518859863281
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.21.ls2",
+   94.61518859863281
+  ],
+  [
+   "foundations.cradio.radio_model.model.blocks.21.drop_path2",
+   94.61518859863281
+  ],
+  [
+   "foundations.moge.encoder.backbone.blocks.8.mlp.fc1",
+   92.53901672363281
+  ]
+ ],
+ "activations_over_fp16_max": []
+}

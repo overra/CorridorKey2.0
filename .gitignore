@@ -37,3 +37,8 @@ tmp/
 # Local / studio-specific files
 path_mappings.json
 .claude/
+
+# Browser port: generated ONNX models, benchmark fixtures, npm deps
+web/models/
+web/node_modules/
+onnx_export/out/

@@ -1,0 +1,10 @@
+== CUDA parity (synthetic)
+alpha(isolated)            max_abs=1.450e-02 mean_abs=1.758e-04 >1/255=6.97e-03 >4/255=0.00e+00 ref_absmax=1.00
+alpha(end-to-end)          max_abs=1.797e-02 mean_abs=1.922e-04 >1/255=9.90e-03 >4/255=3.27e-06 ref_absmax=1.00
+bf16 production: alpha     max_abs=3.035e-02 mean_abs=2.081e-04 >1/255=1.47e-02 >4/255=5.75e-04 ref_absmax=1.00
+bf16 production: baton     max_abs=4.325e-02 mean_abs=2.045e-03 >1/255=1.19e-01 >4/255=1.83e-03 ref_absmax=3.94
+== CUDA parity (real)
+alpha(isolated)            max_abs=1.087e-02 mean_abs=1.377e-04 >1/255=1.43e-03 >4/255=0.00e+00 ref_absmax=1.00
+alpha(end-to-end)          max_abs=1.168e-02 mean_abs=1.387e-04 >1/255=1.59e-03 >4/255=0.00e+00 ref_absmax=1.00
+bf16 production: alpha     max_abs=1.367e-02 mean_abs=1.065e-04 >1/255=2.12e-03 >4/255=0.00e+00 ref_absmax=1.00
+bf16 production: baton     max_abs=3.416e-02 mean_abs=1.886e-03 >1/255=1.02e-01 >4/255=4.10e-04 ref_absmax=3.74

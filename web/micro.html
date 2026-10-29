@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CorridorKey Micro</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "onnxruntime-web/webgpu": "./node_modules/onnxruntime-web/dist/ort.webgpu.min.mjs",
+        "onnxruntime-common": "./node_modules/onnxruntime-common/dist/esm/index.js",
+        "@huggingface/transformers": "./node_modules/@huggingface/transformers/dist/transformers.web.js"
+      }
+    }
+  </script>
+  <style>
+    body { font: 13px/1.4 ui-monospace, monospace; margin: 16px; background: #111; color: #ddd; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>CorridorKey 2.0: WebGPU op microbenchmarks</h1>
+  <pre id="log"></pre>
+  <script type="module" src="./micro.js"></script>
+</body>
+</html>

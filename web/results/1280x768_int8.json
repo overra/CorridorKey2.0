@@ -1,0 +1,171 @@
+{
+ "preset": "1280x768",
+ "dtype": "q8_fused",
+ "dtypes": {},
+ "epOptions": {},
+ "golden": "golden",
+ "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+ "adapter": {
+  "vendor": "nvidia",
+  "architecture": "ampere",
+  "description": "",
+  "f16": true,
+  "maxBufferSize": 4294967296,
+  "maxStorageBufferBindingSize": 4294967292
+ },
+ "load_ms": 2961,
+ "load_ms_by_component": {
+  "cradio": 1107,
+  "moge": 375,
+  "rvm": 127,
+  "stage1": 955,
+  "stage2": 383,
+  "blend": 11
+ },
+ "first_window_ms": 4552,
+ "parity": {
+  "cradio": {
+   "max_abs": 0.7029027119278908,
+   "mean_abs": 0.00927572997450497,
+   "over1": 0.7051640263310184,
+   "over4": 0.1724274811921296,
+   "nan": false
+  },
+  "moge": {
+   "max_abs": 0.42706888914108276,
+   "mean_abs": 0.010219062447000155,
+   "over1": 0.7411946614583333,
+   "over4": 0.20680067274305558,
+   "nan": false
+  },
+  "rvm": {
+   "max_abs": 1.4293160438537598,
+   "mean_abs": 0.013005633426860813,
+   "over1": 0.7744303385416667,
+   "over4": 0.3069390190972222,
+   "nan": false
+  },
+  "rvm_state": {
+   "max_abs": 0.12053495645523071,
+   "mean_abs": 0.013930247802553372,
+   "over1": 0.8103712828492393,
+   "over4": 0.3579378457814661,
+   "nan": false
+  },
+  "baton": {
+   "max_abs": 0.06739497184753418,
+   "mean_abs": 0.0029325582500687205,
+   "over1": 0.24928194681803384,
+   "over4": 0.006510289510091146,
+   "nan": false
+  },
+  "carry": {
+   "max_abs": 0.01575261354446411,
+   "mean_abs": 0.00036045369451880304,
+   "over1": 0.0019772847493489585,
+   "over4": 2.5431315104166666e-7,
+   "nan": false
+  },
+  "alpha": {
+   "max_abs": 0.03407490253448486,
+   "mean_abs": 0.0001729213534308845,
+   "over1": 0.0064056396484375,
+   "over4": 0.000006357828776041666,
+   "nan": false
+  },
+  "fg": {
+   "max_abs": 0.034503668546676636,
+   "mean_abs": 0.0017774838129280563,
+   "over1": 0.14936726888020832,
+   "over4": 0.013319820827907988,
+   "nan": false
+  },
+  "baton(isolated)": {
+   "max_abs": 0.037030816078186035,
+   "mean_abs": 0.0025368262298941617,
+   "over1": 0.20771166483561196,
+   "over4": 0.00141143798828125,
+   "nan": false
+  },
+  "alpha(isolated)": {
+   "max_abs": 0.011384040117263794,
+   "mean_abs": 0.00015741803990039214,
+   "over1": 0.0037478129069010418,
+   "over4": 0,
+   "nan": false
+  }
+ },
+ "throughput_runs_ms": [
+  839.76,
+  825.12,
+  820.2
+ ],
+ "throughput": {
+  "frames": 24,
+  "downloaded": 24,
+  "wall_ms": 19684.9,
+  "ms_per_frame": 820.2,
+  "fps": 1.219,
+  "stages": {
+   "cradio": {
+    "calls": 24,
+    "ms_per_call": 11.65,
+    "ms_per_frame": 11.65
+   },
+   "moge": {
+    "calls": 24,
+    "ms_per_call": 6.22,
+    "ms_per_frame": 6.22
+   },
+   "rvm": {
+    "calls": 24,
+    "ms_per_call": 9.15,
+    "ms_per_frame": 9.15
+   },
+   "stage1": {
+    "calls": 11,
+    "ms_per_call": 102.11,
+    "ms_per_frame": 46.8
+   },
+   "stage2": {
+    "calls": 24,
+    "ms_per_call": 41.88,
+    "ms_per_frame": 41.88
+   }
+  }
+ },
+ "profile": {
+  "frames": 12,
+  "downloaded": 12,
+  "wall_ms": 9627.7,
+  "ms_per_frame": 802.31,
+  "fps": 1.246,
+  "stages": {
+   "cradio": {
+    "calls": 12,
+    "ms_per_call": 41.78,
+    "ms_per_frame": 41.78
+   },
+   "moge": {
+    "calls": 12,
+    "ms_per_call": 12.78,
+    "ms_per_frame": 12.78
+   },
+   "rvm": {
+    "calls": 12,
+    "ms_per_call": 10.75,
+    "ms_per_frame": 10.75
+   },
+   "stage1": {
+    "calls": 5,
+    "ms_per_call": 813,
+    "ms_per_frame": 338.75
+   },
+   "stage2": {
+    "calls": 12,
+    "ms_per_call": 386.64,
+    "ms_per_frame": 386.64
+   }
+  }
+ }
+}
